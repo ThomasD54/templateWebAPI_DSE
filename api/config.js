@@ -6,6 +6,7 @@ module.exports =  {
     "user" : "pollution_dse_user",
     "password" : "7D2NNdVSdDsQxXutcXt6PpJqBXUDTqZV",
     "bdname" :"pollution_dse" 
+    // dfsdfsdfsfd
     }
 }
 
