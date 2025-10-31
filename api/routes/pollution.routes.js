@@ -1,5 +1,5 @@
 module.exports = app => {
-    const catalogue = require("../controllers/pollution.controllers.js");
+    const pollution = require("../controllers/pollution.controllers.js");
   
     var router = require("express").Router();
   
