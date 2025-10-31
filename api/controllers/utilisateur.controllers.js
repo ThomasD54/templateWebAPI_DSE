@@ -6,7 +6,7 @@ const Utilisateurs = db.utilisateurs;
 const Op = db.Sequelize.Op;
 
 // Find a single Utilisateur with an login
-exports.login = (req, res) => {
+exports.login = (req, res) => { // remplacer login par pollution
   const utilisateur = {
     login: req.body.login,
     password: req.body.password
