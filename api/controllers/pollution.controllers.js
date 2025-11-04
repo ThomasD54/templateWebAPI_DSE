@@ -37,19 +37,19 @@ exports.findOne = (req, res) => {
 
 // Création d'une nouvelle pollution
 exports.create = (req, res) => {
-    const pollution = {
-        id: uuidv4(),
-        titre: req.body.titre,
-        type_pollution: req.body.type_pollution,
-        description: req.body.description,
-        date_observation: req.body.date_observation,
-        lieu: req.body.lieu,
-        latitude: req.body.latitude,
-        longitude: req.body.longitude,
-        photo_url: req.body.photo_url
-    };
+  const pollution = {
+    id: uuidv4(),
+    titre: req.body.titre,
+    type_pollution: req.body.type_pollution,
+    description: req.body.description,
+    date_observation: req.body.date_observation,
+    lieu: req.body.lieu,
+    latitude: req.body.latitude,
+    longitude: req.body.longitude,
+    photo_url: req.body.photo_url || null
+  };
 
-    Pollution.create(pollution)
-        .then(data => res.send(data))
-        .catch(err => res.status(400).send({ message: err.message }));
-    };
+  Pollution.create(pollution)
+    .then(data => res.send(data))
+    .catch(err => res.status(400).send({ message: err.message }));
+};
