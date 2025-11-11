@@ -3,13 +3,11 @@ module.exports = app => {
   
     const router = require("express").Router();
   
-    
     router.get("/", pollution.get);
     router.get("/:id", pollution.findOne);
     router.post("/", pollution.create);
     router.put("/:id", pollution.update);
     router.delete("/:id", pollution.delete);
   
-
-    app.use('/api/pollution', router);
+    app.use('/api/pollutions', router);
   };
