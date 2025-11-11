@@ -2,12 +2,17 @@ const db = require("../models");
 const Utilisateurs = db.utilisateurs;
 const Op = db.Sequelize.Op;
 
-// Obtenir tous les utilisateurs
-exports.get = (req, res) => {
-    Utilisateurs.findAll()
-        .then(data => res.send(data))
-        .catch(err => res.status(400).send({ message: err.message }));
+// Récupérer tous les utilisateurs
+exports.findAll = (req, res) => {
+  const Utilisateurs = require("../models").utilisateurs;
+
+  Utilisateurs.findAll()
+    .then(data => res.send(data))
+    .catch(err => {
+      res.status(500).send({ message: err.message });
+    });
 };
+
 
 // Obtenir un utilisateur par ID
 exports.findOne = (req, res) => {
