@@ -16,5 +16,5 @@ module.exports = app => {
     // Récupérer un utilisateur par ID
     router.get("/:id", utilisateur.findOne);
 
-    app.use('/api/utilisateur', router);
+    app.use('/api/utilisateurs', router);
   };
