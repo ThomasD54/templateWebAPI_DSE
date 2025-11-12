@@ -1,4 +1,4 @@
 module.exports = app => {  
   require("./pollution.routes")(app);
-  require("./utilisateurs.routes")(app);
+  require("./routes/utilisateurs.routes")(app);
 }
