@@ -34,7 +34,6 @@ exports.create = (req, res) => {
         prenom: req.body.prenom,
         login: req.body.login,
         pass: req.body.pass,
-        email: req.body.email || null
     };
 
     Utilisateurs.create(utilisateur)
