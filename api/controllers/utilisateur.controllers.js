@@ -33,7 +33,7 @@ exports.create = (req, res) => {
         nom: req.body.nom,
         prenom: req.body.prenom,
         login: req.body.login,
-        motdepasse: req.body.motdepasse,
+        pass: req.body.pass,
         email: req.body.email || null
     };
 
