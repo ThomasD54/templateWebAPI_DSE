@@ -1,20 +1,16 @@
 module.exports = app => {
     const utilisateur = require("../controllers/utilisateur.controllers.js");
+    const checkJwt = require("../middleware/checkJwt");
   
     var router = require("express").Router();
   
-
-    // login utilisateur
+    // Routes publiques
     router.post("/login", utilisateur.login);
-    
-    // Création d'un utilisateur
     router.post("/", utilisateur.create);
 
-    // Récupérer tous les utilisateurs
-    router.get("/", utilisateur.findAll);
-
-    // Récupérer un utilisateur par ID
-    router.get("/:id", utilisateur.findOne);
+    // Routes privées (nécessitent un token JWT)
+    router.get("/", checkJwt, utilisateur.findAll);
+    router.get("/:id", checkJwt, utilisateur.findOne);
 
     app.use('/api/utilisateurs', router);
   };
